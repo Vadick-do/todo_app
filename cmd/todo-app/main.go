@@ -13,7 +13,7 @@ import (
 	core_http_server "github.com/Vadick-do/todo_app/internal/core/transport/htpp/server"
 	users_postgres_repository "github.com/Vadick-do/todo_app/internal/features/users/repository/postgres"
 	users_service "github.com/Vadick-do/todo_app/internal/features/users/service"
-	users_transport_http "github.com/Vadick-do/todo_app/internal/features/users/transport"
+	users_transport_http "github.com/Vadick-do/todo_app/internal/features/users/transport/http"
 	"go.uber.org/zap"
 )
 
