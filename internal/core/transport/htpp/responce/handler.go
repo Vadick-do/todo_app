@@ -93,13 +93,13 @@ func (h *HTTPResponceHandler) errorResponse(
 ) {
 	h.rw.WriteHeader(statusCode)
 
-	responce := map[string]string{
-		"message": msg,
-		"error":   err.Error(),
+	response := ErrorResponse{
+		Error:   err.Error(),
+		Message: msg,
 	}
 
 	h.JSONResponse(
-		responce,
+		response,
 		statusCode,
 	)
 }
