@@ -103,3 +103,12 @@ func (h *HTTPResponceHandler) errorResponse(
 		statusCode,
 	)
 }
+
+func (h *HTTPResponceHandler) HTMLResponse(html []byte) {
+	h.rw.WriteHeader(http.StatusOK)
+
+	h.rw.Header().Set("Content-Type", "text/html; charset=utf-8")
+	if _, err := h.rw.Write(html); err != nil {
+		h.log.Error("Write HTML HTTP response", zap.Error(err))
+	}
+}
